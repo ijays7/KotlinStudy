@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">KotlinStudy</string>
     <string name="action_settings">Settings</string>
+
+    <string name="OK">OK</string>
+    <string name="request_permission">Requesting permission</string>
+    <string name="grant_success">grant_success</string>
+    <string name="grant_failed">grant_failed</string>
 </resources>
