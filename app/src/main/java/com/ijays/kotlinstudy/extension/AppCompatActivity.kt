@@ -1,4 +1,4 @@
-package com.ijays.kotlinstudy
+package com.ijays.kotlinstudy.extension
 
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity

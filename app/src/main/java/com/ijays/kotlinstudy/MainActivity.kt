@@ -10,6 +10,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
+import com.ijays.kotlinstudy.extension.requestPermissionCompat
+import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
 import com.ijays.kotlinstudy.util.ToastUtil
 import kotlinx.android.synthetic.main.content_main.*
 
