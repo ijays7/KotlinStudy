@@ -1,6 +1,7 @@
 package com.ijays.kotlinstudy
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -10,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.ijays.kotlinstudy.activity.LayoutAnimationActivity
 import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
 import com.ijays.kotlinstudy.extension.requestPermissionCompat
 import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
@@ -18,7 +20,7 @@ import kotlinx.android.synthetic.main.content_main.*
 
 const val REQUEST_PERMISSION_CAMERA = 1
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main
@@ -34,10 +36,9 @@ class MainActivity : BaseActivity() {
                     .setAction("Action", null).show()
         }
 
-        bt_open_camera.setOnClickListener(View.OnClickListener {
+        bt_open_camera.setOnClickListener(this)
+        bt_layout_animation.setOnClickListener(this)
 
-            openCamera()
-        })
     }
 
     /**
@@ -83,6 +84,17 @@ class MainActivity : BaseActivity() {
                 }
             }
         }
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.bt_open_camera -> openCamera()
+
+            R.id.bt_layout_animation -> {
+                startActivity(Intent(this@MainActivity,LayoutAnimationActivity::class.java))
+            }
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

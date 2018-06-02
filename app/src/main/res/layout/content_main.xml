@@ -21,4 +21,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_layout_animation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="layout animation"
+        app:layout_constraintLeft_toLeftOf="@id/bt_open_camera"
+        app:layout_constraintRight_toRightOf="@id/bt_open_camera"
+        app:layout_constraintTop_toBottomOf="@id/bt_open_camera" />
+
+
 </android.support.constraint.ConstraintLayout>
