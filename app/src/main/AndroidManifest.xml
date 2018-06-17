@@ -3,6 +3,7 @@
     package="com.ijays.kotlinstudy">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,6 +26,8 @@
         <activity
             android:name=".activity.LayoutAnimationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".flow.article.ArticleListActivity" />
 
     </application>
 

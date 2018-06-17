@@ -9,8 +9,8 @@ import android.widget.Toast
  */
 
 object ToastUtil {
-    fun showShort(context: Context, msg: String) {
-        var ctx=context
+    fun showShort(context: Context, msg: String?) {
+        var ctx = context
         if (ctx is Activity) {
             ctx = context.applicationContext
         }

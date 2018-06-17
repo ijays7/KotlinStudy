@@ -15,6 +15,7 @@ import com.ijays.kotlinstudy.activity.LayoutAnimationActivity
 import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
 import com.ijays.kotlinstudy.extension.requestPermissionCompat
 import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
+import com.ijays.kotlinstudy.flow.article.ArticleListActivity
 import com.ijays.kotlinstudy.util.ToastUtil
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -38,6 +39,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         bt_open_camera.setOnClickListener(this)
         bt_layout_animation.setOnClickListener(this)
+        bt_net_request.setOnClickListener(this)
 
     }
 
@@ -91,7 +93,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.bt_open_camera -> openCamera()
 
             R.id.bt_layout_animation -> {
-                startActivity(Intent(this@MainActivity,LayoutAnimationActivity::class.java))
+                startActivity(Intent(this@MainActivity, LayoutAnimationActivity::class.java))
+            }
+            R.id.bt_net_request -> {
+                startActivity(Intent(this@MainActivity, ArticleListActivity::class.java))
             }
         }
 
