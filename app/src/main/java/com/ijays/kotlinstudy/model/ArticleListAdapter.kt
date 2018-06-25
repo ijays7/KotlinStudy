@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.extension.parseTimeStamp2String
+import com.ijays.kotlinstudy.flow.browser.BrowserActivity
 import com.ijays.kotlinstudy.util.ToastUtil
 
 /**
@@ -47,7 +48,8 @@ class ArticleListAdapter(private var dataList: MutableList<ArticleInfoModel>) :
             tv_time.text = articleInfoModel.publishTime.parseTimeStamp2String(articleInfoModel.publishTime)
 
             itemView.setOnClickListener({
-                ToastUtil.showShort(it.context, "lalala")
+
+                BrowserActivity.startActivity(it.context, articleInfoModel.link)
             })
         }
 

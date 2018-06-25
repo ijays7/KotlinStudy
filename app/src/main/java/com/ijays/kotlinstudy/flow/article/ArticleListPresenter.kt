@@ -27,7 +27,7 @@ class ArticleListPresenter : BaseMvpPresenterImpl<ArticleListContract.View>(), A
                         return@Consumer
                     }
 
-                    mView?.handleArticleList(it?.data)
+                    mView?.handleArticleList(it.data)
                 }, Consumer {
                     Log.e("SONGJIE", "error===>" + it.message)
                 })
