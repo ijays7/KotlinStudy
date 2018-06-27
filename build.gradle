@@ -18,7 +18,10 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://maven.google.com' }
+//        maven { url 'https://maven.google.com' }
+
+        //替换为
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
         jcenter()
         mavenCentral()
     }

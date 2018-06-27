@@ -31,7 +31,9 @@
         <activity
             android:name=".flow.browser.BrowserActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity
+            android:name=".activity.SpringAnimActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

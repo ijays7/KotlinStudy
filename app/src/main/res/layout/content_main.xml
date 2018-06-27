@@ -32,13 +32,24 @@
         app:layout_constraintTop_toBottomOf="@id/bt_open_camera" />
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_spring_animation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="spring animation"
+        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+        app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
+
+
+
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/bt_net_request"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="mvp sample"
-        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
-        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
+        app:layout_constraintLeft_toLeftOf="@id/bt_spring_animation"
+        app:layout_constraintRight_toRightOf="@id/bt_spring_animation"
+        app:layout_constraintTop_toBottomOf="@id/bt_spring_animation" />
 
 
 </android.support.constraint.ConstraintLayout>
