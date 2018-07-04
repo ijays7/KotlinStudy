@@ -2,6 +2,8 @@ package com.ijays.kotlinstudy.network
 
 import com.ijays.kotlinstudy.AppConstants
 import com.ijays.kotlinstudy.model.ArticleInfoModel
+import com.ijays.kotlinstudy.model.BannerModel
+import com.ijays.kotlinstudy.model.BaseResponseModel
 import com.ijays.kotlinstudy.model.ResponseModel
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
@@ -12,7 +14,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  * Created by ijaysdev on 20/08/2017.
  */
 object ApiManager {
-    private lateinit var apiSerive: ApiService
+    private lateinit var apiService: ApiService
 
     init {
         val retrofit = initRetrofit()
@@ -28,11 +30,15 @@ object ApiManager {
     }
 
     private fun initService(retrofit: Retrofit) {
-        apiSerive = retrofit.create(ApiService::class.java)
+        apiService = retrofit.create(ApiService::class.java)
     }
 
     fun getArticleList(id: Int): Observable<ResponseModel<MutableList<ArticleInfoModel>>> {
-        return apiSerive.getArticleList(id)
+        return apiService.getArticleList(id)
+    }
+
+    fun getBannerList(): Observable<BaseResponseModel<List<BannerModel>>> {
+        return apiService.getBannerList()
     }
 
 }

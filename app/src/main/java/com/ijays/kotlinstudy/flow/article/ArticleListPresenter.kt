@@ -33,4 +33,17 @@ class ArticleListPresenter : BaseMvpPresenterImpl<ArticleListContract.View>(), A
                 })
     }
 
+    override fun getBannerList() {
+        ApiManager.getBannerList()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+
+                    mView?.displayBanner(bannerList = it.data)
+                }, {
+
+                })
+
+    }
+
 }

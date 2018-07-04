@@ -81,7 +81,7 @@ public class NestedWebViewJava extends WebView implements NestedScrollingChild {
                     trackedEvent.offsetLocation(0, mScrollOffset[1]);
                     mNestedYOffset += mScrollOffset[1];
                 }
-                if(mScrollConsumed[1]==0 && mScrollOffset[1]==0) {
+                if (mScrollConsumed[1] == 0 && mScrollOffset[1] == 0) {
                     trackedEvent.recycle();
                     result = super.onTouchEvent(trackedEvent);
                 }
@@ -91,6 +91,8 @@ public class NestedWebViewJava extends WebView implements NestedScrollingChild {
             case MotionEvent.ACTION_CANCEL:
                 stopNestedScroll();
                 result = super.onTouchEvent(event);
+                break;
+            default:
                 break;
         }
         return result;

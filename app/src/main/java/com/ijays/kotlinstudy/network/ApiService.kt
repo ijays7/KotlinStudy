@@ -1,6 +1,8 @@
 package com.ijays.kotlinstudy.network
 
 import com.ijays.kotlinstudy.model.ArticleInfoModel
+import com.ijays.kotlinstudy.model.BannerModel
+import com.ijays.kotlinstudy.model.BaseResponseModel
 import com.ijays.kotlinstudy.model.ResponseModel
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -15,4 +17,7 @@ interface ApiService {
 
     @GET("article/list/{id}/json")
     fun getArticleList(@Path("id") id: Int): Observable<ResponseModel<MutableList<ArticleInfoModel>>>
+
+    @GET("banner/json")
+    fun getBannerList():Observable<BaseResponseModel<List<BannerModel>>>
 }

@@ -12,6 +12,7 @@ import android.webkit.WebView
 import java.util.jar.Attributes
 
 /**
+ * A webView that supports nested scroll
  * Created by ijays on 2018/6/25.
  */
 class NestedWebView @JvmOverloads constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int = 0)

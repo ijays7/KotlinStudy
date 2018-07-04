@@ -6,4 +6,6 @@
     <dimen name="text_size_small">12sp</dimen>
 
     <dimen name="divider_height">0.5dp</dimen>
+
+    <dimen name="status_bar_height">0dp</dimen>
 </resources>

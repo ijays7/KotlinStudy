@@ -8,8 +8,6 @@ import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
-import android.webkit.WebViewClient
-import com.ijays.kotlinstudy.BaseActivity
 import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.mvp.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_browser_layout.*
@@ -78,4 +76,14 @@ class BrowserActivity : BaseMvpActivity<BrowserContract.View, BrowserPresenter>(
         web_view.loadUrl(url)
     }
 
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        if (web_view != null) {
+            web_view.removeAllViews()
+            web_view.clearHistory()
+            web_view.destroy()
+        }
+    }
 }
