@@ -7,7 +7,9 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="240dp"
+        android:background="@null"
+        app:elevation="0dp">
 
         <com.loonggg.rvbanner.lib.RecyclerViewBanner
             android:id="@+id/rv_banner"
@@ -30,7 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_behavior="@string/title_bar_behavior">
 
         <View
             android:id="@+id/status_bar_view"
@@ -49,8 +52,10 @@
                 android:background="@color/colorPrimary" />
 
             <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:title="@string/app_name"
                 app:titleTextColor="@color/white" />
         </FrameLayout>

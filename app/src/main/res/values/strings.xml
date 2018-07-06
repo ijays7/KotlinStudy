@@ -6,4 +6,7 @@
     <string name="request_permission">Requesting permission</string>
     <string name="grant_success">grant_success</string>
     <string name="grant_failed">grant_failed</string>
+    
+    
+    <string name="title_bar_behavior">com.ijays.kotlinstudy.view.behavior.TitleBarBehavior</string>
 </resources>
