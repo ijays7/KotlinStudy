@@ -13,10 +13,10 @@
         android:id="@+id/bt_open_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="open camera"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -32,13 +32,22 @@
         app:layout_constraintTop_toBottomOf="@id/bt_open_camera" />
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_stroke_image_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="stroke imageView"
+        app:layout_constraintLeft_toLeftOf="@id/bt_open_camera"
+        app:layout_constraintRight_toRightOf="@id/bt_open_camera"
+        app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
+
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/bt_net_request"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="mvp sample"
         app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
         app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
+        app:layout_constraintTop_toBottomOf="@id/bt_stroke_image_view" />
 
 
 </android.support.constraint.ConstraintLayout>
