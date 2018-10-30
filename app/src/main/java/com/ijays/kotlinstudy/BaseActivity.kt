@@ -1,7 +1,7 @@
 package com.ijays.kotlinstudy
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Created by ijaysdev on 20/08/2017.

@@ -1,11 +1,10 @@
 package com.ijays.kotlinstudy.view.behavior
 
 import android.content.Context
-import android.support.design.widget.CoordinatorLayout
-import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 
 /**
  * Created by ijays on 2018/7/6.
@@ -15,11 +14,11 @@ class TitleBarBehavior @JvmOverloads constructor(context: Context, attributeSet:
 
     private var totalRange: Float = 0f
 
-    override fun layoutDependsOn(parent: CoordinatorLayout?, child: View?, dependency: View?): Boolean {
-        return dependency is RecyclerView
+    override fun layoutDependsOn(parent: CoordinatorLayout, child: View, dependency: View): Boolean {
+        return dependency is androidx.recyclerview.widget.RecyclerView
     }
 
-    override fun onDependentViewChanged(parent: CoordinatorLayout?, child: View?, dependency: View?): Boolean {
+    override fun onDependentViewChanged(parent: CoordinatorLayout, child: View, dependency: View): Boolean {
 
         if (totalRange == 0f) {
             totalRange = dependency?.top?.toFloat() ?: 0f

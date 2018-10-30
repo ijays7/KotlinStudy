@@ -1,8 +1,8 @@
 package com.ijays.kotlinstudy.flow.article
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
@@ -41,7 +41,7 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
         // set immersive mode
         setImmersiveMode(window)
 
-        recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,
+        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
                 false)
         mAdapter = ArticleListAdapter(ArrayList())
         recycler_view.adapter = mAdapter

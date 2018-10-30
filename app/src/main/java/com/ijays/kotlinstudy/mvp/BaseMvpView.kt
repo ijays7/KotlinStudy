@@ -1,7 +1,7 @@
 package com.ijays.kotlinstudy.mvp
 
 import android.content.Context
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 
 /**
  * Created by ijays on 2018/6/2.
