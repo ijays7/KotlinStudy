@@ -27,11 +27,14 @@
             android:name=".activity.LayoutAnimationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".flow.article.ArticleListActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".flow.article.ArticleListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".flow.browser.BrowserActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".activity.NavigationTestActivity" />
 
     </application>
 

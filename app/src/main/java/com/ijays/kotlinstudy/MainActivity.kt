@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.ijays.kotlinstudy.activity.LayoutAnimationActivity
+import com.ijays.kotlinstudy.activity.NavigationTestActivity
 import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
 import com.ijays.kotlinstudy.extension.requestPermissionCompat
 import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
@@ -40,6 +41,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         bt_open_camera.setOnClickListener(this)
         bt_layout_animation.setOnClickListener(this)
         bt_net_request.setOnClickListener(this)
+        bt_navigation.setOnClickListener(this)
 
     }
 
@@ -61,10 +63,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             } else {
 
                 val snackBar = com.google.android.material.snackbar.Snackbar.make(content_view, R.string.request_permission, com.google.android.material.snackbar.Snackbar.LENGTH_SHORT)
-                snackBar.setAction(R.string.OK, {
+                snackBar.setAction(R.string.OK) {
 
                     ToastUtil.showShort(it.context, "我在使用Kotlin")
-                }).show()
+                }.show()
 
                 requestPermissionCompat(arrayOf(Manifest.permission.CAMERA), REQUEST_PERMISSION_CAMERA)
             }
@@ -98,6 +100,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.bt_net_request -> {
                 startActivity(Intent(this@MainActivity, ArticleListActivity::class.java))
             }
+
+            R.id.bt_navigation ->
+                startActivity(Intent(this@MainActivity, NavigationTestActivity::class.java))
         }
 
     }

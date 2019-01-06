@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_first">
+
+    <fragment
+        android:id="@+id/nav_first"
+        android:name="com.ijays.kotlinstudy.fragment.NaviFirstFragment"
+        tools:layout="@layout/fragment_navi_first">
+
+        <action
+            android:id="@+id/action_nav_first_to_naviSecondFragment"
+            app:destination="@id/naviSecondFragment"
+            app:enterAnim="@anim/slide_left_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviSecondFragment"
+        android:name="com.ijays.kotlinstudy.fragment.NaviSecondFragment"
+        android:label="NaviSecondFragment">
+        <action
+            android:id="@+id/action_naviSecondFragment_to_naviThirdFragment"
+            app:destination="@id/naviThirdFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviThirdFragment"
+        android:name="com.ijays.kotlinstudy.fragment.NaviThirdFragment"
+        android:label="NaviThirdFragment">
+        <action
+
+            android:id="@+id/action_naviThirdFragment_to_nav_first"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popUpTo="@id/nav_first" />
+        <!-- 直接跳转到first fragmnet -->
+    </fragment>
+
+</navigation>
