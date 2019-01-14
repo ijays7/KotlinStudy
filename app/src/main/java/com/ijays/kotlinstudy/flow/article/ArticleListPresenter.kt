@@ -11,25 +11,28 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by ijays on 2018/6/4.
  */
-class ArticleListPresenter : BaseMvpPresenterImpl<ArticleListContract.View>(), ArticleListContract.Presenter {
+class ArticleListPresenter(view: ArticleListContract.View) : BaseMvpPresenterImpl<ArticleListContract.View>(view),
+        ArticleListContract.Presenter {
+
     override fun getArticleList(id: Int) {
         ApiManager.getArticleList(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(Consumer {
                     if (it == null) {
-                        mView?.showError("返回数据为空")
+                        view?.showError("返回数据为空")
                         return@Consumer
                     }
 
                     if (it.errorCode < AppConstants.RESPONSE_SUCCESS) {
-                        mView?.showError(it.errorMsg)
+                        view?.showError(it.errorMsg)
                         return@Consumer
                     }
 
-                    mView?.handleArticleList(it.data)
+                    view?.handleArticleList(it.data)
                 }, Consumer {
                     Log.e("SONGJIE", "error===>" + it.message)
+                    view?.showError(it.message)
                 })
     }
 
@@ -39,7 +42,7 @@ class ArticleListPresenter : BaseMvpPresenterImpl<ArticleListContract.View>(), A
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
 
-                    mView?.displayBanner(bannerList = it.data)
+                    view?.displayBanner(bannerList = it.data)
                 }, {
 
                 })

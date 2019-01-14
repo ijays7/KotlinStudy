@@ -11,12 +11,6 @@ import com.ijays.kotlinstudy.util.ToastUtil
 abstract class BaseMvpActivity<in V : BaseMvpView, T : BaseMvpPresenter<V>> : BaseActivity(), BaseMvpView {
     protected abstract var mPresenter: T
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        this.mPresenter.attachView(view = this as V)
-        super.onCreate(savedInstanceState)
-    }
-
     override fun getContext(): Context = this
 
     override fun showError(error: String?) {
@@ -28,10 +22,10 @@ abstract class BaseMvpActivity<in V : BaseMvpView, T : BaseMvpPresenter<V>> : Ba
     }
 
     override fun showMessage(stringResId: Int) {
-    ToastUtil.showShort(applicationContext,getString(stringResId))
+        ToastUtil.showShort(applicationContext, getString(stringResId))
     }
 
-    override fun showMessage(message:String) {
+    override fun showMessage(message: String) {
     }
 
     override fun onStop() {

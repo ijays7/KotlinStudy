@@ -1,11 +1,10 @@
 package com.ijays.kotlinstudy.flow.article
 
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.extension.setImmersiveMode
@@ -15,8 +14,9 @@ import com.ijays.kotlinstudy.model.ArticleListAdapter
 import com.ijays.kotlinstudy.model.BannerModel
 import com.ijays.kotlinstudy.model.ResponseDataInfo
 import com.ijays.kotlinstudy.mvp.BaseMvpActivity
+import com.ijays.kotlinstudy.mvp.BaseMvpPresenterImpl
+import com.ijays.kotlinstudy.mvp.BaseMvpView
 import kotlinx.android.synthetic.main.activity_article_list_layout.*
-import kotlin.math.abs
 
 /**
  * Created by ijays on 2018/6/4.
@@ -29,7 +29,7 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
 
     private lateinit var mAdapter: ArticleListAdapter
 
-    override var mPresenter: ArticleListPresenter = ArticleListPresenter()
+    override var mPresenter: ArticleListPresenter = ArticleListPresenter(this)
 
 
     override fun getLayoutId(): Int {
@@ -41,7 +41,7 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
         // set immersive mode
         setImmersiveMode(window)
 
-        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+        recycler_view.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,
                 false)
         mAdapter = ArticleListAdapter(ArrayList())
         recycler_view.adapter = mAdapter
@@ -56,7 +56,6 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
     }
 
     override fun handleArticleList(articleResponse: ResponseDataInfo<MutableList<ArticleInfoModel>>?) {
-        Log.e("SONGJIE", "handle success")
 
         if (articleResponse == null) {
             showError("返回数据为空")
@@ -76,11 +75,11 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
     override fun displayBanner(bannerList: List<BannerModel>) {
         if (bannerList.isNotEmpty()) {
             rv_banner.setRvBannerData(bannerList)
-            rv_banner.setOnSwitchRvBannerListener({ position, imageView ->
+            rv_banner.setOnSwitchRvBannerListener { position, imageView ->
                 Glide.with(this)
                         .load(bannerList[position].imagePath)
                         .into(imageView)
-            })
+            }
 
             rv_banner.setOnRvBannerClickListener {
                 BrowserActivity.startActivity(this, bannerList[it].url)
