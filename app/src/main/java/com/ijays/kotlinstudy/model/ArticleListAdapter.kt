@@ -21,7 +21,7 @@ class ArticleListAdapter(private var dataList: MutableList<ArticleInfoModel>) :
     }
 
     override fun onBindViewHolder(holder: ArticleListVH, position: Int) {
-        holder?.show(dataList.get(position))
+        holder.show(dataList.get(position))
     }
 
     override fun getItemCount(): Int {

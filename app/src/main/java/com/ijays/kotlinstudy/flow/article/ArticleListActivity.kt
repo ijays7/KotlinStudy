@@ -3,19 +3,20 @@ package com.ijays.kotlinstudy.flow.article
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.extension.setImmersiveMode
 import com.ijays.kotlinstudy.flow.browser.BrowserActivity
+import com.ijays.kotlinstudy.flow.viewmodel.ArticleListViewModel
 import com.ijays.kotlinstudy.model.ArticleInfoModel
 import com.ijays.kotlinstudy.model.ArticleListAdapter
 import com.ijays.kotlinstudy.model.BannerModel
 import com.ijays.kotlinstudy.model.ResponseDataInfo
 import com.ijays.kotlinstudy.mvp.BaseMvpActivity
-import com.ijays.kotlinstudy.mvp.BaseMvpPresenterImpl
-import com.ijays.kotlinstudy.mvp.BaseMvpView
 import kotlinx.android.synthetic.main.activity_article_list_layout.*
 
 /**
@@ -28,6 +29,8 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
     private var topBarHeight: Int = 0
 
     private lateinit var mAdapter: ArticleListAdapter
+
+    private lateinit var viewModel: ArticleListViewModel
 
     override var mPresenter: ArticleListPresenter = ArticleListPresenter(this)
 
@@ -49,9 +52,22 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        mPresenter.getArticleList(0)
+        viewModel = ViewModelProviders.of(this).get(ArticleListViewModel::class.java)
 
-        mPresenter.getBannerList()
+
+        viewModel.getBannerList()
+
+        viewModel.bannerLiveData.observe(this, Observer {
+            if (it.data != null) {
+                displayBanner(it.data)
+            }
+        })
+
+        viewModel.getArticleListLiveData(0).observe(this,Observer{
+            if (it.data!=null){
+                handleArticleList(it.data)
+            }
+        })
 
     }
 
