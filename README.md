@@ -9,4 +9,5 @@
 - 展示如何使用 layoutAnimation
 - 使用 MVP 模式打开 wanAndroid 页面，包含文章列表和文章详情
 - 展示如何使用 Jetpack 中的 navigation
+- [RxLifecycle原理解析](http://jaysdev.github.io/2019/01/22/RxLifecycle%E8%A7%A3%E6%9E%90/)
 
