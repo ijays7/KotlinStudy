@@ -4,13 +4,12 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ijays.kotlinstudy.activity.LayoutAnimationActivity
 import com.ijays.kotlinstudy.activity.NavigationTestActivity
 import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
@@ -29,8 +28,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-        val fab = findViewById(R.id.fab) as com.google.android.material.floatingactionbutton.FloatingActionButton
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val fab = findViewById<FloatingActionButton>(R.id.fab)
 
         setSupportActionBar(toolbar)
         fab.setOnClickListener { view ->
@@ -52,7 +51,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         if (checkSelfPermissionCompat(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             //如果授予了权限
-            Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
 
         } else {
 
