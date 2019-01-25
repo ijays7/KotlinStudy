@@ -21,14 +21,14 @@ class TitleBarBehavior @JvmOverloads constructor(context: Context, attributeSet:
     override fun onDependentViewChanged(parent: CoordinatorLayout, child: View, dependency: View): Boolean {
 
         if (totalRange == 0f) {
-            totalRange = dependency?.top?.toFloat() ?: 0f
+            totalRange = dependency.top.toFloat()
         }
 
-        val rate = 1 - (dependency?.top?.div(totalRange) ?: 0f)
+        val rate = 1 - (dependency?.top?.div(totalRange))
 
-        Log.e("SONGJIE", "child height----->${child?.height}----->${dependency?.top}")
+        Log.e("SONGJIE", "child height----->${child.height}----->${dependency.top}")
 
-        child?.alpha = rate
+        child.alpha = rate
 
         return true
     }

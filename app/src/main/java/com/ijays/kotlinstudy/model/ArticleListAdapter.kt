@@ -16,12 +16,12 @@ class ArticleListAdapter(private var dataList: MutableList<ArticleInfoModel>) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleListVH {
-        return ArticleListVH(LayoutInflater.from(parent?.context).inflate(R.layout.item_article_list,
+        return ArticleListVH(LayoutInflater.from(parent.context).inflate(R.layout.item_article_list,
                 parent, false))
     }
 
     override fun onBindViewHolder(holder: ArticleListVH, position: Int) {
-        holder?.show(dataList.get(position))
+        holder.show(dataList.get(position))
     }
 
     override fun getItemCount(): Int {
