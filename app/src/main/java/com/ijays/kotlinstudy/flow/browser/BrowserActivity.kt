@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_browser_layout.*
  */
 class BrowserActivity : BaseMvpActivity<BrowserContract.View, BrowserPresenter>(), BrowserContract.View {
 
-    override var mPresenter: BrowserPresenter = BrowserPresenter()
+    override var mPresenter: BrowserPresenter = BrowserPresenter(this)
 
     companion object {
         const val EXTRA_URL = "extra_url"

@@ -5,11 +5,12 @@ import com.ijays.kotlinstudy.mvp.BaseMvpPresenterImpl
 /**
  * Created by ijays on 2018/6/25.
  */
-class BrowserPresenter : BaseMvpPresenterImpl<BrowserContract.View>(), BrowserContract.Presenter {
+class BrowserPresenter(view: BrowserContract.View) :
+        BaseMvpPresenterImpl<BrowserContract.View>(view = view), BrowserContract.Presenter {
     override fun loadUrl(url: String) {
-        mView?.setupWebView()
+        view?.setupWebView()
 
-        mView?.loadUrl(url)
+        view?.loadUrl(url)
     }
 
 }

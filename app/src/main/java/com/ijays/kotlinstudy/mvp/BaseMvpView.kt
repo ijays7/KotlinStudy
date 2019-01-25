@@ -2,6 +2,7 @@ package com.ijays.kotlinstudy.mvp
 
 import android.content.Context
 import androidx.annotation.StringRes
+import androidx.lifecycle.LifecycleOwner
 
 /**
  * Created by ijays on 2018/6/2.
@@ -16,5 +17,7 @@ interface BaseMvpView {
 
     fun showMessage(@StringRes stringResId: Int)
 
-    fun showMessage(message:String)
+    fun showMessage(message: String)
+
+    fun getLifecycleOwner(): LifecycleOwner
 }

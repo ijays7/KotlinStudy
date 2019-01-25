@@ -22,12 +22,9 @@ import kotlinx.android.synthetic.main.activity_article_list_layout.*
 class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleListPresenter>(),
         ArticleListContract.View {
 
-
-    private var topBarHeight: Int = 0
-
     private lateinit var mAdapter: ArticleListAdapter
 
-    override var mPresenter: ArticleListPresenter = ArticleListPresenter()
+    override var mPresenter: ArticleListPresenter = ArticleListPresenter(view = this)
 
 
     override fun getLayoutId(): Int {
@@ -54,8 +51,6 @@ class ArticleListActivity : BaseMvpActivity<ArticleListContract.View, ArticleLis
     }
 
     override fun handleArticleList(articleResponse: ResponseDataInfo<MutableList<ArticleInfoModel>>?) {
-        Log.e("SONGJIE", "handle success")
-
         if (articleResponse == null) {
             showError("返回数据为空")
             return

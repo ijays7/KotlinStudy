@@ -2,6 +2,8 @@ package com.ijays.kotlinstudy.mvp
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.LifecycleOwner
 import com.ijays.kotlinstudy.BaseActivity
 import com.ijays.kotlinstudy.util.ToastUtil
 
@@ -13,7 +15,10 @@ abstract class BaseMvpActivity<in V : BaseMvpView, T : BaseMvpPresenter<V>> : Ba
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        this.mPresenter.attachView(view = this as V)
+        if (mPresenter != null) {
+            lifecycle.addObserver(mPresenter)
+        }
+
         super.onCreate(savedInstanceState)
     }
 
@@ -28,15 +33,12 @@ abstract class BaseMvpActivity<in V : BaseMvpView, T : BaseMvpPresenter<V>> : Ba
     }
 
     override fun showMessage(stringResId: Int) {
-    ToastUtil.showShort(applicationContext,getString(stringResId))
+        ToastUtil.showShort(applicationContext, getString(stringResId))
     }
 
-    override fun showMessage(message:String) {
+    override fun showMessage(message: String) {
     }
 
-    override fun onStop() {
-        super.onStop()
-        mPresenter.detachView()
-    }
+    override fun getLifecycleOwner() = this
 
 }
