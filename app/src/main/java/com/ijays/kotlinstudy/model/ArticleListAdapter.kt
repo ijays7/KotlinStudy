@@ -45,10 +45,10 @@ class ArticleListAdapter(private var dataList: MutableList<ArticleInfoModel>) :
             tv_chapter_name.text = articleInfoModel.chapterName ?: ""
             tv_time.text = articleInfoModel.publishTime.parseTimeStamp2String(articleInfoModel.publishTime)
 
-            itemView.setOnClickListener({
+            itemView.setOnClickListener{
 
                 BrowserActivity.startActivity(it.context, articleInfoModel.link)
-            })
+            }
         }
 
 
