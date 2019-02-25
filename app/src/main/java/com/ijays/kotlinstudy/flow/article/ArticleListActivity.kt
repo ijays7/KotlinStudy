@@ -10,7 +10,7 @@ import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.extension.setImmersiveMode
 import com.ijays.kotlinstudy.flow.browser.BrowserActivity
 import com.ijays.kotlinstudy.model.ArticleInfoModel
-import com.ijays.kotlinstudy.model.ArticleListAdapter
+import com.ijays.kotlinstudy.adapter.ArticleListAdapter
 import com.ijays.kotlinstudy.model.BannerModel
 import com.ijays.kotlinstudy.model.ResponseDataInfo
 import com.ijays.kotlinstudy.mvp.BaseMvpActivity

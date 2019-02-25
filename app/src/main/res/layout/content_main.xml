@@ -41,13 +41,22 @@
         app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_view_pager2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="view pager 2"
+        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+        app:layout_constraintTop_toBottomOf="@id/bt_net_request" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Jetpack navigation"
         app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
         app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_net_request" />
+        app:layout_constraintTop_toBottomOf="@id/bt_view_pager2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ijays.kotlinstudy.activity.LayoutAnimationActivity
 import com.ijays.kotlinstudy.activity.NavigationTestActivity
+import com.ijays.kotlinstudy.activity.ViewPager2Activity
 import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
 import com.ijays.kotlinstudy.extension.requestPermissionCompat
 import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
@@ -41,6 +42,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         bt_layout_animation.setOnClickListener(this)
         bt_net_request.setOnClickListener(this)
         bt_navigation.setOnClickListener(this)
+        bt_view_pager2.setOnClickListener(this)
 
     }
 
@@ -102,6 +104,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.bt_navigation ->
                 startActivity(Intent(this@MainActivity, NavigationTestActivity::class.java))
+
+            R.id.bt_view_pager2 ->
+                startActivity(Intent(this@MainActivity, ViewPager2Activity::class.java))
+
         }
 
     }

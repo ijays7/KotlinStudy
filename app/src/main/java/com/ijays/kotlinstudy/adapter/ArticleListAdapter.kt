@@ -1,4 +1,4 @@
-package com.ijays.kotlinstudy.model
+package com.ijays.kotlinstudy.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.TextView
 import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.extension.parseTimeStamp2String
 import com.ijays.kotlinstudy.flow.browser.BrowserActivity
+import com.ijays.kotlinstudy.model.ArticleInfoModel
 
 /**
  * Created by ijays on 2018/6/4.

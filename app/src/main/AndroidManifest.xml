@@ -25,16 +25,25 @@
 
         <activity
             android:name=".activity.LayoutAnimationActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".flow.article.ArticleListActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".flow.browser.BrowserActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".activity.NavigationTestActivity" />
+        <activity
+            android:name=".activity.NavigationTestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ViewPager2Activity"
+            android:screenOrientation="portrait" />
 
     </application>
 
