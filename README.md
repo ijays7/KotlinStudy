@@ -1,6 +1,6 @@
 ## Kotlin学习项目
 
-[![CircleCI](https://circleci.com/gh/jaysdev/KotlinStudy.svg?style=svg)](https://circleci.com/gh/jaysdev/KotlinStudy)
+[![CircleCI](https://circleci.com/gh/ijays7/KotlinStudy.svg?style=svg)](https://circleci.com/gh/ijays7/KotlinStudy)
 
 
 分别包含：
