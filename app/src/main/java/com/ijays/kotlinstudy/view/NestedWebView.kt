@@ -1,15 +1,13 @@
 package com.ijays.kotlinstudy.view
 
 import android.content.Context
+import android.util.AttributeSet
+import android.view.MotionEvent
+import android.webkit.WebView
 import androidx.core.view.MotionEventCompat
 import androidx.core.view.NestedScrollingChild
 import androidx.core.view.NestedScrollingChildHelper
 import androidx.core.view.ViewCompat
-import android.util.AttributeSet
-import android.view.MotionEvent
-import android.view.View
-import android.webkit.WebView
-import java.util.jar.Attributes
 
 /**
  * A webView that supports nested scroll
