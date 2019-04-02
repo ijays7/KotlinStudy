@@ -4,16 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.ijays.kotlinstudy.R
 import com.ijays.kotlinstudy.extension.parseTimeStamp2String
 import com.ijays.kotlinstudy.flow.browser.BrowserActivity
 import com.ijays.kotlinstudy.model.ArticleInfoModel
 
 /**
+ * 文章列表adapter
  * Created by ijays on 2018/6/4.
  */
 class ArticleListAdapter(private var dataList: MutableList<ArticleInfoModel>) :
-        androidx.recyclerview.widget.RecyclerView.Adapter<ArticleListAdapter.ArticleListVH>() {
+       RecyclerView.Adapter<ArticleListAdapter.ArticleListVH>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleListVH {
@@ -46,7 +48,7 @@ class ArticleListAdapter(private var dataList: MutableList<ArticleInfoModel>) :
             tv_chapter_name.text = articleInfoModel.chapterName ?: ""
             tv_time.text = articleInfoModel.publishTime.parseTimeStamp2String(articleInfoModel.publishTime)
 
-            itemView.setOnClickListener{
+            itemView.setOnClickListener {
 
                 BrowserActivity.startActivity(it.context, articleInfoModel.link)
             }

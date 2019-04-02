@@ -58,5 +58,14 @@
         app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
         app:layout_constraintTop_toBottomOf="@id/bt_view_pager2" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_snap_helper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SnapHelper"
+        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+        app:layout_constraintTop_toBottomOf="@id/bt_navigation" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
