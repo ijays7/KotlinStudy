@@ -18,6 +18,7 @@ import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
 import com.ijays.kotlinstudy.extension.requestPermissionCompat
 import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
 import com.ijays.kotlinstudy.flow.article.ArticleListActivity
+import com.ijays.kotlinstudy.model.UserModel
 import com.ijays.kotlinstudy.util.ToastUtil
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -114,6 +115,49 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
         }
+
+    }
+
+    /**
+     * 使用局部函数,即在方法中定义方法
+     */
+    fun saveUser(user: UserModel) {
+        /**
+         * 不使用局部函数
+         */
+        if (user.userName.isEmpty()) {
+            throw IllegalArgumentException("Can't save ${user.userName}:empty name")
+        }
+
+        if (user.userId.isEmpty()) {
+            throw IllegalArgumentException("Can't save ${user.userId}:empty id")
+        }
+        // ... more actions
+
+        /**
+         * 提取局部函数来避免重复
+         */
+        fun validate(user: UserModel, value: String, fieldName: String) {
+            if (value.isEmpty()) {
+                throw IllegalArgumentException("Cannot save user ${user.userId}:empty $fieldName")
+            }
+        }
+
+        validate(user, user.userName, "userName")
+        validate(user, user.userId, "userId")
+
+        /**
+         *优化,局部函数可以访问所在函数中的所有参数和变量
+         */
+        fun validate(value: String, fieldName: String) {
+            if (value.isEmpty()) {
+                throw IllegalArgumentException("Cannot save user ${user.userId}:empty $fieldName")
+            }
+        }
+
+        validate(user.userName, "userName")
+        validate(user.userId, "userId")
+
 
     }
 

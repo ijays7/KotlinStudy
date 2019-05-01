@@ -1,5 +1,6 @@
 package com.ijays.kotlinstudy.extension
 
+import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
 import androidx.core.app.ActivityCompat
@@ -11,6 +12,12 @@ import android.view.WindowManager
 /**
  * Created by ijays on 2018/5/29.
  */
+
+/**
+ * 扩展属性
+ */
+val Number.dp: Int get() = (toInt() * Resources.getSystem().displayMetrics.density).toInt()
+
 fun AppCompatActivity.checkSelfPermissionCompat(permission: String): Int {
     return ActivityCompat.checkSelfPermission(this, permission)
 }
