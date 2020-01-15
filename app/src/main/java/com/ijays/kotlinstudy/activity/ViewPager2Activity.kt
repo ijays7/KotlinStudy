@@ -22,7 +22,7 @@ class ViewPager2Activity : BaseActivity() {
         val fragmentList = listOf(NaviFirstFragment.newInstance(1),
                 NaviSecondFragment.newInstance(1),
                 NaviThirdFragment.newInstance(1))
-        val adapter = ViewPager2Adapter(supportFragmentManager, dataList = fragmentList)
+        val adapter = ViewPager2Adapter(this@ViewPager2Activity, dataList = fragmentList)
 
         view_pager2.adapter = adapter
 
@@ -32,19 +32,19 @@ class ViewPager2Activity : BaseActivity() {
             override fun onPageScrollStateChanged(state: Int) {
                 super.onPageScrollStateChanged(state)
 
-                Log.e("SONGJIE", "OnPageScrollStateChanged")
+                Log.e("ijays", "OnPageScrollStateChanged")
             }
 
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
 
-                Log.e("SONGJIE", "onPageSelected====>$position")
+                Log.e("ijays", "onPageSelected====>$position")
             }
 
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
 
-                Log.e("SONGJIE", "onPageScrolled")
+                Log.e("ijays", "onPageScrolled")
             }
 
         })
