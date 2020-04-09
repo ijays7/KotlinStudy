@@ -1,71 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.ijays.kotlinstudy.MainActivity"
-    tools:showIn="@layout/activity_main">
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_open_camera"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="open camera"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.ijays.kotlinstudy.MainActivity"
+        tools:showIn="@layout/activity_main">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_layout_animation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="layout animation"
-        app:layout_constraintLeft_toLeftOf="@id/bt_open_camera"
-        app:layout_constraintRight_toRightOf="@id/bt_open_camera"
-        app:layout_constraintTop_toBottomOf="@id/bt_open_camera" />
+            android:id="@+id/bt_open_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="open camera"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_net_request"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="mvp sample"
-        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
-        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
+            android:id="@+id/bt_layout_animation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="layout animation"
+            app:layout_constraintLeft_toLeftOf="@id/bt_open_camera"
+            app:layout_constraintRight_toRightOf="@id/bt_open_camera"
+            app:layout_constraintTop_toBottomOf="@id/bt_open_camera" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_view_pager2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="view pager 2"
-        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
-        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_net_request" />
+            android:id="@+id/bt_net_request"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="mvp sample"
+            app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+            app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+            app:layout_constraintTop_toBottomOf="@id/bt_layout_animation" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Jetpack navigation"
-        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
-        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_view_pager2" />
+            android:id="@+id/bt_view_pager2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="view pager 2"
+            app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+            app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+            app:layout_constraintTop_toBottomOf="@id/bt_net_request" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_snap_helper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="SnapHelper"
-        app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
-        app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
-        app:layout_constraintTop_toBottomOf="@id/bt_navigation" />
+            android:id="@+id/bt_navigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Jetpack navigation"
+            app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+            app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+            app:layout_constraintTop_toBottomOf="@id/bt_view_pager2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_snap_helper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SnapHelper"
+            app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+            app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+            app:layout_constraintTop_toBottomOf="@id/bt_navigation" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_coroutine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Coroutine"
+            app:layout_constraintLeft_toLeftOf="@id/bt_layout_animation"
+            app:layout_constraintRight_toRightOf="@id/bt_layout_animation"
+            app:layout_constraintTop_toBottomOf="@id/bt_snap_helper" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

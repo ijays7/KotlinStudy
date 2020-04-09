@@ -10,13 +10,11 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.ijays.kotlinstudy.activity.LayoutAnimationActivity
-import com.ijays.kotlinstudy.activity.NavigationTestActivity
-import com.ijays.kotlinstudy.activity.SnapHelperActivity
-import com.ijays.kotlinstudy.activity.ViewPager2Activity
+import com.ijays.kotlinstudy.activity.*
 import com.ijays.kotlinstudy.extension.checkSelfPermissionCompat
 import com.ijays.kotlinstudy.extension.requestPermissionCompat
 import com.ijays.kotlinstudy.extension.shouldShowRequestPermissionRationalCompat
+import com.ijays.kotlinstudy.extension.start
 import com.ijays.kotlinstudy.flow.article.ArticleListActivity
 import com.ijays.kotlinstudy.model.UserModel
 import com.ijays.kotlinstudy.util.ToastUtil
@@ -46,6 +44,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         bt_navigation.setOnClickListener(this)
         bt_view_pager2.setOnClickListener(this)
         bt_snap_helper.setOnClickListener(this)
+        bt_coroutine.setOnClickListener(this)
 
     }
 
@@ -112,6 +111,11 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 startActivity(Intent(this@MainActivity, ViewPager2Activity::class.java))
             R.id.bt_snap_helper -> {
                 startActivity(Intent(this@MainActivity, SnapHelperActivity::class.java))
+            }
+
+            R.id.bt_coroutine -> {
+                // 协程
+                start<CoroutineTestActivity>(this@MainActivity)
             }
 
         }

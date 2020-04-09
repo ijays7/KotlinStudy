@@ -1,5 +1,8 @@
 package com.ijays.kotlinstudy.extension
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
@@ -37,5 +40,11 @@ fun AppCompatActivity.setImmersiveMode(window: Window) {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = Color.TRANSPARENT
     }
+}
 
+/**
+ * Quickly start an Activity
+ */
+inline fun <reified T : AppCompatActivity> Activity.start(context: Context) {
+    startActivity(Intent(context, T::class.java))
 }
